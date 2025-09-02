@@ -21,7 +21,6 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<Navigate to="/pic-of-day" replace />} />
           <Route path="/pic-of-day" element={<App />} />
           <Route path="/earth" element={<Earth />} />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
