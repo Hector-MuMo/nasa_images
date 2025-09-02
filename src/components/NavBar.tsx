@@ -28,12 +28,6 @@ const NavBar = (): JSX.Element => {
               >
                 Earth Images
               </NavLink>
-              <NavLink
-                to="/Contact"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                Contact
-              </NavLink>
             </ul>
           </div>
         </div>
@@ -50,12 +44,6 @@ const NavBar = (): JSX.Element => {
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             Earth Images
-          </NavLink>
-          <NavLink
-            to="/Contact"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            Contact
           </NavLink>
         </Menu>
       )}
