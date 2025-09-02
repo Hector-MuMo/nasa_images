@@ -1,24 +1,30 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from "react-router";
-import App from './App.tsx'
-import NavBar from './components/NavBar.tsx';
-import About from './pages/About.tsx';
-import Contact from './pages/Contact.tsx';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router";
+import App from "./App.tsx";
+import NavBar from "./components/NavBar.tsx";
+import Contact from "./pages/Contact.tsx";
+import Footer from "./components/Footer.tsx";
+import Earth from "./pages/Earth.tsx";
 
-import './index.css'
-import './styles/navBar.css'
+import "./index.css";
+import "./styles/navBar.css";
 
-
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-    <NavBar/>
-    <Routes>
-      <Route path="/pic-of-day" element={<App />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  </BrowserRouter>
-  </StrictMode>
-)
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Navigate to="/pic-of-day" replace />} />
+          <Route path="/pic-of-day" element={<App />} />
+          <Route path="/earth" element={<Earth />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  </StrictMode>,
+);

@@ -1,27 +1,19 @@
-import useAPOD from "./hooks/useAPOD"
+import { lazy, Suspense, type JSX } from "react";
+import Loading from "./components/Loading";
 
-function App() {
-  const { apod } = useAPOD();
+import "./styles/APOD.css";
 
+const Apod = lazy(() => import("./components/Apod"));
+
+function App(): JSX.Element {
   return (
-    <section>
-      {Object.keys(apod).length > 0
-        ?
-        <>
-          <div>
-            <h2>{apod.title}</h2>
-            <p>{apod.explanation}</p>
-          </div>
-          <figure>
-            <img src={apod.hdurl} alt={apod.title} />
-          </figure>
-        </>
-        :
-        <p>Error</p> 
-      }
-
-    </section>
-  )
+    <div id="wrap" className="apod-container">
+      <h1>Astronomical Picture of the Day</h1>
+      <Suspense fallback={<Loading />}>
+        <Apod />
+      </Suspense>
+    </div>
+  );
 }
 
-export default App
+export default App;

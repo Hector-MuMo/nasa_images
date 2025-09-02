@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+html, body {
+  height: 100%;
+  position: relative;
   font-family: 'Roboto', cursive ;
   margin: 0;
   padding: 0;
@@ -8,10 +10,19 @@ body {
 }
 
 :root {
-  background: rgb(18, 18, 26);
-  background: radial-gradient(circle, rgba(250, 229, 2, 1) 1%, rgba(214, 140, 21, 1) 10%, rgb(18, 18, 26) 30%);
-  height: 100vh;
-  color: #ffffff;
+  --primary-color: #0b3d91;
+  --secondary-color: #ffffff;
+  --third-color: #fc3c23 ;
+  --backgroundColor: #000;
+  position: relative;
+  background: var(--backgroundColor);
+  /* background: radial-gradient(circle, rgba(250, 229, 2, 1) 1%, rgba(214, 140, 21, 1) 10%, rgb(14, 14, 14) 30%); */
+  background-repeat: no-repeat;
+  color: var(--secondary-color);
+}
+
+main {
+  height: 100%;
 }
 
 img {
